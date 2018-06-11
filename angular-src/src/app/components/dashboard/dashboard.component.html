@@ -1,0 +1,16 @@
+<h2 class="page-header">Dashboard</h2>
+<form (submit)="onAddStock()">
+  <div class="form-group">
+    <label>Stock name</label>
+    <input type="text" class="form-control" [(ngModel)]="stockName" name="stockName">
+  </div>
+  <div class="form-group">
+    <label>Stock description</label>
+    <textarea class="form-control" [(ngModel)]="stockDescription" name="stockDescription"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Stock value</label>
+    <input type="number" class="form-control" [(ngModel)]="stockValue" name="stockValue">
+  </div>
+  <input type="submit" class="btn btn-default" value="Add stock">
+</form>

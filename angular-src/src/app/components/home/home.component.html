@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <h1 class="display-3">MEAN Authentication App!</h1>
+  <p>Welcome to our MEAN App</p>
+  <div>
+    <a class="btn btn-primary btn-lg" [routerLink]="['/register']" role="button">Register</a>
+    <a class="btn btn-primary btn-lg" [routerLink]="['/login']" role="button">Login</a>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Stock Name</th>
+      <th scope="col">Stock Description</th>
+      <th scope="col" *ngIf="authService.loggedIn(); else admin_edit">Edit stock value</th>
+      <ng-template #admin_edit>
+        <th scope="col">Stock Value</th>
+      </ng-template>
+      <th scope="col" *ngIf="authService.loggedIn()">Admin rights</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr app-stock-row *ngFor="let stock of stocks; let i = index" [stockItem]="stock" [index]="i"></tr>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+<th scope="row">{{index}}</th>
+<td>
+    <a [routerLink]="['/stock-historics/' + stockItem._id]" class="text-black">{{stockItem.stockName}}</a>
+</td>
+<td>{{stockItem.stockDescription}}</td>
+<td *ngIf="authService.loggedIn(); else admin_edit">
+  <input type="number" class="form-control" [(ngModel)]="newestValue">
+</td>
+<ng-template #admin_edit>
+  <td>{{stockItem.stockHistorics[stockItem.stockHistorics.length - 1].stockValue}}</td>
+</ng-template>
+<td *ngIf="authService.loggedIn()">
+  <button (click)="onUpdateStock()">Update stock</button>
+  <button (click)="onDeleteStock(stockItem._id)">Delete stock</button>
+</td>
