@@ -1,16 +1,45 @@
 <h2 class="page-header">Dashboard</h2>
-<form (submit)="onAddStock()">
-  <div class="form-group">
-    <label>Stock name</label>
-    <input type="text" class="form-control" [(ngModel)]="stockName" name="stockName">
+<div class="card-group">
+  <div class="card">
+    <div class="card-form">
+      <form (submit)="onAddStock()">
+        <div class="form-group">
+          <label>Stock name</label>
+          <input type="text" class="form-control" [(ngModel)]="stockName" name="stockName">
+        </div>
+        <div class="form-group">
+          <label>Stock description</label>
+          <textarea class="form-control" [(ngModel)]="stockDescription" name="stockDescription"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Stock value</label>
+          <input type="number" class="form-control" [(ngModel)]="stockValue" name="stockValue">
+        </div>
+        <input type="submit" class="btn btn-default" value="Add stock">
+      </form>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Apply your stock here </h5>
+      <p class="card-text">The formula above is used to add new shares to the market. Remember to fill in with name, description and value.</p>
+    </div>
   </div>
-  <div class="form-group">
-    <label>Stock description</label>
-    <textarea class="form-control" [(ngModel)]="stockDescription" name="stockDescription"></textarea>
+  <div class="card">
+      <div class="card-form">
+        <i>More stock features will come to Stock Exchange!</i>
+      </div>
+    <div class="card-body">
+      <h5 class="card-title">Edit stock name</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    </div>
   </div>
-  <div class="form-group">
-    <label>Stock value</label>
-    <input type="number" class="form-control" [(ngModel)]="stockValue" name="stockValue">
+  <div class="card">
+      <div class="card-form">
+          <i>More stock features will come to Stock Exchange!</i>
+        </div>
+    <div class="card-body">
+      <h5 class="card-title">Edit stock description</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer
+        content than the first to show that equal height action.</p>
+    </div>
   </div>
-  <input type="submit" class="btn btn-default" value="Add stock">
-</form>
+</div>

@@ -75,4 +75,13 @@ export class StockService {
     headers.append('Content-Type', 'application/json');
     return this.http.put('http://localhost:3000/stocks/update-stock/' + id, stockValue, { headers: headers }).map(res => res.json());
   }
+
+  updateStockName(id, stockName) {
+    let headers = new Headers();
+    this.loadToken();
+
+    headers.append('Authorization', this.authToken)
+    headers.append('Content-Type', 'application/json');
+    return this.http.put('http://localhost:3000/stocks/update-stock-name/' + id, stockName, { headers: headers }).map(res => res.json());
+  }
 }

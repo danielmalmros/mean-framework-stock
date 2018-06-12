@@ -45,7 +45,25 @@ router.put('/update-stock/:id', passport.authenticate('jwt', { session: false })
     });
 });
 
-// Update stock
+// Update stock name
+router.put('/update-stock-name/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+  Stock.findByIdAndUpdate(req.params.id, {
+    $set: {
+      stockName: req.body.stockName,
+    }
+  }, {
+      upsert: true
+    },
+    (err, updatedStock) => {
+      if (err) {
+        res.send('Error updating stock!');
+      } else {
+        return res.json({ success: true, message: 'A single stock was updated!' });
+      }
+    });
+});
+
+// Delete stock
 router.delete('/delete-stock/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
   Stock.findByIdAndRemove({ _id: req.params.id },
     (err, deleteStock) => {

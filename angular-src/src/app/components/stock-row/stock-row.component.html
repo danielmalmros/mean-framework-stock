@@ -10,6 +10,6 @@
   <td>{{stockItem.stockHistorics[stockItem.stockHistorics.length - 1].stockValue}}</td>
 </ng-template>
 <td *ngIf="authService.loggedIn()">
-  <button (click)="onUpdateStock()">Update stock</button>
-  <button (click)="onDeleteStock(stockItem._id)">Delete stock</button>
+  <button type="button" class="btn btn-info" (click)="onUpdateStock()">Update stock</button>
+  <button type="button" class="btn btn-primary" (click)="onDeleteStock(stockItem._id)">Delete stock</button>
 </td>
