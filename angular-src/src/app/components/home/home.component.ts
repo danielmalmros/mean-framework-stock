@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit {
     this.stockService.getStocks()
       .subscribe(
         stocks => {
-          console.log("Stocks home.component:",stocks);
           this.stocks = stocks;
         },
         error =>  console.log(error)

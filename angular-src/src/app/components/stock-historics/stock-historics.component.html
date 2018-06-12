@@ -10,7 +10,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let stock of stocks.stockHistorics; let i = index">
-          <th scope="row">{{i}}</th>
+          <th scope="row">{{i + 1}}</th>
           <td>{{stock.stockValue}}</td>
           <td>{{stock.stockTimeStamp}}</td>
         </tr>
