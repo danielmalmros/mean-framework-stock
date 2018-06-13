@@ -8,12 +8,43 @@ const config = require('./config/database');
 const socketio = require('socket.io');
 const http = require('http');
 
+const Stock = require('./models/stock');
+const testData = require('./test-data');
+
 // Connect to database
 mongoose.connect(config.database);
 
 // On connection
 mongoose.connection.on('connected', () => {
     console.log('Connected to database ' + config.database);
+
+    // Create test data when opening the applications for the first time.
+    // Will not run this if stock collections already been made.
+    // Test data can be found in test-data.js in root.
+    let stockExist = false;
+
+    // Looking for exisiting collections
+    mongoose.connection.db.listCollections().toArray((error, collections) => {
+
+        // Trying to find collection 'stocks'
+        collections.forEach((collection) => {
+            if (collection.name === 'stocks') {
+                stockExist = true
+            }
+        })
+
+        // Add test data if collection 'stocks' is not created.
+        if (!stockExist) {
+            console.log('First time used - adding test data!');
+            testData.forEach((stock) => {
+                var addStocks = Stock(stock);
+                mongoose.connection.db.collection("stocks").insertOne(addStocks, function (err, res) {
+                    if (err) throw err;
+                    console.log("document inserted");
+                });
+            })
+        }
+    })
 })
 
 // On error
@@ -70,7 +101,7 @@ io.on('connection', function (socket) {
 
     // The contents of that message is then send back to client.
     socket.on('refresh', (message) => {
-        io.emit('Update', message);    
+        io.emit('Update', message);
     });
 });
 

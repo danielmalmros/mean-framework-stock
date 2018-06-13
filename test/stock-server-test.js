@@ -37,7 +37,7 @@ describe('Database Tests', function () {
 
     // Save object with data.
     it('New test stock saved to test collection', function (done) {
-      var testName = testStocks({
+      var testStock = testStocks({
         stockName: 'Test name',
         stockDescription: 'Test description',
         stockHistorics: [{
@@ -45,7 +45,7 @@ describe('Database Tests', function () {
         }]
       });
 
-      testName.save(done);
+      testStock.save(done);
     });
     it('Dont save incorrect format to database stock collection', function (done) {
 
