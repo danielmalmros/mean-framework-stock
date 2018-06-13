@@ -6,34 +6,32 @@ import * as Rx from 'rxjs/Rx';
 @Injectable()
 export class WebsocketService {
 
-  // Our socket connection
   private socket;
 
   constructor() { }
 
   connect(): Rx.Subject<MessageEvent> {
-    // If you aren't familiar with environment variables then
-    // you can hard code `environment.ws_url` as `http://localhost:5000`
+
+    // Server-side connection.
+    // Assigning the server port to client.
     this.socket = io('http://localhost:3000');
 
-    // We define our observable which will observe any incoming messages
-    // from our socket.io server.
+    // Defining observable which will observe any incoming messages from the server.
     let observable = new Observable(observer => {
-        // this.socket.on('message', (data) => {
-        //   console.log("Received message from Websocket Server")
-        //   observer.next(data);
-        // })
 
+        // Gets the msg from the server, that client can be updatet.
         this.socket.on('Update', (data) => {
+
+            // Notify browser console that new data is received.
             console.log('refreshed data received', data);
-            //observer.next(data);
         });
+
         return () => {
           this.socket.disconnect();
         }
     });
     
-    // We define our Observer which will listen to messages
+    // We define our Observer which will listen to messages from the components
     // from our other components and send messages back to our
     // socket server whenever the `next()` method is called.
     let observer = {

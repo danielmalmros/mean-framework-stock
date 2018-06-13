@@ -1,30 +1,26 @@
-# Boilerplate: MEAN Stack
+# MEAN Stack: Stock Exchange
 
-The project is under development, but feel free to use it!
+This is a school project that demonstrats a MEAN Stack application with realtime data through socket.io. The application uses Angular 5^ and boostrap for the frontend part, while the server uses Node.js and Express.
 
-Created this application boilerplate to have a starter point on every MEAN projects!
+## Installation 
 
-## Installation
-
-Install the dependencies
+Install the dependencies for server in root!
+Open command prompt and run following commands.
 
 ```sh
 $ npm install
 ```
-Run app
+
+## Run server 
+
+Run the server with following commands.
 
 ```sh
-$ npm start
+$ npm start or nodemon
 ```
 
-## Features:
+Run server-side test with following command.
 
-* Comming soon
-
-## Basic use:
-
-* Comming soon
-
-## Contain:
-
-* Comming soon
+```sh
+$ npm test
+```

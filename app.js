@@ -63,22 +63,15 @@ let server = http.createServer(app);
 let io = socketio(server);
 
 io.on('connection', function (socket) {
-    
-
+    // Notify in console that socket.io connection is created.
     console.log("New client connected");
-    // socket.on('disconnect', () => {
-    //     console.log('user has disconnected');
-    // });
+
     stocks.addClient(socket);
     stocks.notifyClients();
 
-    // When we receive a 'message' event from our client, print out
-    // the contents of that message and then echo it back to our client
-    // using `io.emit()`
+    // The contents of that message is then send back to client.
     socket.on('refresh', (message) => {
-        console.log("Update Received: " + message);
-        //stocks.notifyClients(socket);
-        io.emit('Update', "yoyoyoyoyoyyo");    
+        io.emit('Update', message);    
     });
 });
 

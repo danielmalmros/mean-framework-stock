@@ -5,9 +5,9 @@
       <th scope="col">#</th>
       <th scope="col">Stock Name</th>
       <th scope="col">Stock Description</th>
-      <th scope="col" *ngIf="authService.loggedIn(); else admin_edit">Edit stock value</th>
+      <th scope="col" *ngIf="authService.loggedIn(); else admin_edit">Edit stock value (Billion $)</th>
       <ng-template #admin_edit>
-        <th scope="col">Stock Value</th>
+        <th scope="col">Stock Value (Billion $)</th>
       </ng-template>
       <th scope="col" *ngIf="authService.loggedIn()">Admin rights</th>
     </tr>

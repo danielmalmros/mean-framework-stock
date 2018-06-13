@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
 
-// User schema
+// Stock schema
 const StockSchema = mongoose.Schema({
     stockName: String,
     stockDescription: String,
