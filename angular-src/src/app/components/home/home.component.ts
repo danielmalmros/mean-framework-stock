@@ -18,26 +18,23 @@ export class HomeComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private flashMessages: FlashMessagesService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getStocks();
-    
+
     // Make sure we have a connection to the server
     var socket = io('http://localhost:3000');
     socket.on('Update', () => this.getStocks());
   }
 
-
   getStocks() {
     console.log('Subscribe to service');
-    this.stockService.getStocks()
-      .subscribe(
-        stocks => {
-          this.stocks = stocks;
-        },
-        error =>  console.log(error)
-      );
+    this.stockService.getStocks().subscribe(
+      stocks => {
+        this.stocks = stocks;
+      },
+      error => console.log(error)
+    );
   }
-
 }

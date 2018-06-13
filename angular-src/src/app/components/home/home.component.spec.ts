@@ -1,21 +1,27 @@
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { HomeComponent } from './home.component';
+import { HomeComponent } from './home.component';
 
-// describe('HomeComponent', () => {
-//   let component: HomeComponent;
-//   // let fixture: ComponentFixture<HomeComponent>;
+describe('HomeComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
 
-//   beforeEach(function(done) {
-//     setTimeout(function() {
-//       // do setup for spec here
+  it('passes if stock is an array of objects', function() {
 
-//       // then call done() in beforeEach() to start asynchronous test
-//       done();
-//     }, 1);
-//   });
+    // Waiting for data to be received from server
+    setTimeout(() => {      
+      let stocks = {};
+      
+      expect(stocks).toEqual(component.stocks);
+    }, 100);
+  });
 
-//   it('should be able to search', function(done) {
-//     component.getStocks();
-//   });
-// });
+  it('passes if stock length is > 0', function() {
+
+    // Waiting for data to be received from server
+    setTimeout(() => {      
+      expect(component.stocks).toBeGreaterThan(1);
+    }, 100);
+  });
+
+});
