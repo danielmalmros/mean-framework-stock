@@ -4,22 +4,18 @@
 
 // describe('HomeComponent', () => {
 //   let component: HomeComponent;
-//   let fixture: ComponentFixture<HomeComponent>;
+//   // let fixture: ComponentFixture<HomeComponent>;
 
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [ HomeComponent ]
-//     })
-//     .compileComponents();
-//   }));
+//   beforeEach(function(done) {
+//     setTimeout(function() {
+//       // do setup for spec here
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(HomeComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
+//       // then call done() in beforeEach() to start asynchronous test
+//       done();
+//     }, 1);
 //   });
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
+//   it('should be able to search', function(done) {
+//     component.getStocks();
 //   });
 // });

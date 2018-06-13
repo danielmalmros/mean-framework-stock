@@ -15,13 +15,14 @@ $ npm install
 
 ## Run server
 
-Run the mongoDB daemon.
+Run the mongoDB daemon.<br />
 Requires that you have set up mongoDB on your computer!
 
 ```sh
 $ mongod
 ```
 
+If you run the server for the first time logic is created to add test data to mongo. <br />
 Run the server with following commands.
 
 ```sh
