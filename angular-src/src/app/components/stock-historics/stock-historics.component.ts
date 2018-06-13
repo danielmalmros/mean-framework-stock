@@ -27,6 +27,8 @@ export class StockHistoricsComponent implements OnInit {
   ngOnInit() {
     this.getStockHistorics();
     
+    // Make sure we have a connection to the server when we add stocks
+    // Notify that we now can update the client realtime.
     var socket = io('http://localhost:3000');
     socket.on('Update', () => this.getStockHistorics());
   }
@@ -39,5 +41,4 @@ export class StockHistoricsComponent implements OnInit {
       return false
     })
   }
-
 }

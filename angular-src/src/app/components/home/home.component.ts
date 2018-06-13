@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getStocks();
     
+    // Make sure we have a connection to the server
     var socket = io('http://localhost:3000');
     socket.on('Update', () => this.getStocks());
   }

@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
 
+    // Auth users when they login
     this.authService.authticateUser(user).subscribe(data => {
       if (data.success) {
         this.authService.storUserData(data.token, data.user);

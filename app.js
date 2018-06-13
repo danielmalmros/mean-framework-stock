@@ -8,7 +8,6 @@ const config = require('./config/database');
 const socketio = require('socket.io');
 const http = require('http');
 
-
 // Connect to database
 mongoose.connect(config.database);
 
@@ -49,7 +48,6 @@ require('./config/passport')(passport);
 app.use('/users', users)
 app.use('/stocks', stocks)
 
-
 // Index Route
 app.get('/', (req, res) => {
     res.send('Invalid endport');
@@ -59,6 +57,7 @@ app.get('*', () => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
+// Create a connection for socket.io
 let server = http.createServer(app);
 let io = socketio(server);
 

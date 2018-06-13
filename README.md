@@ -13,7 +13,14 @@ Open command prompt and run following commands.
 $ npm install
 ```
 
-## Run server 
+## Run server
+
+Run the mongoDB daemon.
+Requires that you have set up mongoDB on your computer!
+
+```sh
+$ mongod
+```
 
 Run the server with following commands.
 

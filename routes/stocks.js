@@ -99,6 +99,7 @@ router.get('/stocks/:id', (req, res, next) => {
     })
 });
 
+// socket.io function for msg to client.
 router.clients = [];
 router.addClient = function (client) {
   router.clients.push(client);
