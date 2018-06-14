@@ -2,7 +2,11 @@
 
 This is a school project that demonstrats a MEAN Stack application with realtime data through socket.io. The application uses Angular 5^ and boostrap for the frontend part, while the server uses Node.js and Express.
 
-Frontend documentation can be found [here](https://github.com/danielmalmros/mean-framework-stock/tree/master/angular-src)
+## Frontend in angular-src
+
+Frontend documentation on can be found [here](https://github.com/danielmalmros/mean-framework-stock/tree/master/angular-src)
+<br/>
+Start your server before running the frontend!
 
 ## Installation 
 
