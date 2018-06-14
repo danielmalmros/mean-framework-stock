@@ -6,7 +6,7 @@ This is a school project that demonstrats a MEAN Stack application with realtime
 
 This school project was generated with [Angular CLI](https://github.com/angular/angular-cli)
 
-## Installation 
+## Installation frontend
 
 Install the dependencies for frontend in angular-src!
 Open command prompt and run following commands.

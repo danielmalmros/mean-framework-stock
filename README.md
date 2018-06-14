@@ -8,7 +8,7 @@ Frontend documentation on can be found [here](https://github.com/danielmalmros/m
 <br/>
 Start your server before running the frontend!
 
-## Installation 
+## Installation server
 
 Install the dependencies for server in root!
 Open command prompt and run following commands.
